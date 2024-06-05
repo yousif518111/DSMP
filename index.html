@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dungeon SMP</title>
+    <link rel="icon" type="image/webp" href="https://i.ibb.co/V9JLSVT/header-Copy.webp">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
@@ -16,7 +17,6 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            overflow: hidden;
         }
         body::before {
             content: "";
@@ -24,12 +24,12 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 1000000%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.5);
             z-index: -1;
         }
         header {
-            width: 100%;
+            width: 97%;
             background-color: rgba(51, 51, 51, 0.8);
             display: flex;
             align-items: center;
@@ -117,7 +117,7 @@
         }
         .link-container {
             margin-top: 5px;
-            font-size: 12px;
+            font-size: 15px;
         }
         .link-container a {
             color: #7289da;
@@ -180,18 +180,50 @@
             margin-top: 20px;
             font-size: 18px;
         }
+        footer {
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+        }
+        .social-media a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        .social-media a:hover {
+            color: #7289da;
+        }
+		.footer-link a {
+            margin: 0 10px;
+            color: gray;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        .footer-link a:hover {
+            color: #7289da;
+        }
+		
     </style>
 </head>
 <body>
     <header>
         <a href="/" class="logo-container">
-            <img src="header.webp" alt="Home">
+            <img src="https://i.ibb.co/V9JLSVT/header-Copy.webp" alt="Home">
             <span>Dungeon SMP</span>
         </a>
         <nav>
-            <a href="/">Home</a>
-            <a href="/rules">Rules</a>
+            <a href="index.html">Home</a>
+            <a href="rules.html">Rules</a>
             <a href="/contact">Contact</a>
+            <a href="/faq">FAQ</a>
             <a href="/credits">Credits</a>
         </nav>
     </header>
@@ -199,7 +231,7 @@
         <div class="title">Dungeon SMP</div>
         <div class="description">
             <div class="link-container111">
-                Welcome to the Dungeon SMP, A Completly survival Realm with no Plugins, Our goal is to give a safe space for players looking to play Regular Minecraft without Having to deal with mods and complicated servers, Please read our <a href="example.com"><u>Rules</u></a> before Playing on The Realm
+                Welcome to the Dungeon SMP, A Completely survival Realm with no Plugins, Our goal is to give a safe space for players looking to play Regular Minecraft without Having to deal with mods and complicated servers, Please read our <a href="rules.html"><u>Rules</u></a> before Playing on The Realm
             </div>
             <div class="button-container">
                 <button onclick="window.location.href='https://discord.com/invite/FrZs3uC3Tx'">Take Me to the Discord Server!</button>
@@ -220,6 +252,30 @@
             <!-- Content will be updated by JavaScript -->
         </div>
         <div class="spinner"></div>
+    </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Dungeon SMP. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.youtube.com" target="_blank">YouTube</a>
+            <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://discord.com/invite/FrZs3uC3Tx" target="_blank">Discord</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="#" id="free-diamonds">Free Diamonds</a>
+        </div>
+        <div class="footer-link">
+            <a href="" id="admin-panel-link">Contact us</a>
+            <a href="nokillmembers.html">No PvP Members</a>
+            <a href="https://docs.google.com/forms/d/15r7TksfX6lvE802VBAAf6mVltmvpZ0e-68N4t3AiOCw">Ban Appeal</a>
+        </div>
+    </footer>
+    <div class="overlay" id="diamonds-overlay">
+        <video id="diamonds-video" width="100%" height="100%" loop>
+            <source src="rick1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <span class="close-overlay" onclick="closeOverlay()">X</span>
     </div>
     <script>
         const phrases = [
@@ -249,7 +305,7 @@
                 if (timeLeft <= 0) {
                     clearInterval(countdown);
                     clearInterval(timer);
-                    document.getElementById('modal-content').innerHTML = '<a href="https://realms.gg/DhkkRknfm5s" target="_blank"><strong>Join the Realm now!</strong></a>';
+                    document.getElementById('modal-content').innerHTML = '<a href="https://docs.google.com/forms/d/1qnN_5WipVjAWvGiHIIJ8HgzkzG37ZZmu50sjGeXTmNU" target="_blank"><strong>Fill out this form to join</strong></a>';
                     document.querySelector('.spinner').style.display = 'none';  // Hide the spinner
                     document.getElementById('modal-timer').style.display = 'none'; // Hide the timer
                 }
@@ -284,6 +340,22 @@
                 disclaimer.remove();
             }
         });
+        document.getElementById('free-diamonds').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            var overlay = document.getElementById('diamonds-overlay');
+            var video = document.getElementById('diamonds-video');
+
+            overlay.style.display = 'block'; // Show the overlay
+            video.play(); // Play the video
+        });
+
+        function closeOverlay() {
+            var overlay = document.getElementById('diamonds-overlay');
+            var video = document.getElementById('diamonds-video');
+
+            overlay.style.display = 'none'; // Hide the overlay
+            video.pause(); // Pause the video when overlay is closed
+        }
     </script>
 </body>
 </html>
