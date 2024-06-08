@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon SMP</title>
+    <link rel="icon" type="image/webp" href="https://i.ibb.co/V9JLSVT/header-Copy.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.ibb.co/ZTcHD06/bgsky.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+			-ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        header {
+            width: 97%;
+            background-color: rgba(51, 51, 51, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            border-radius: 10px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            margin-left: 10px;
+        }
+        .logo-container img {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+        }
+        .logo-container span {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            margin-right: 40px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+		}
+		p a {
+		text-decoration: none;
+		color: white;
+        transition: color 0.3s ease;
+        }
+		p a:hover {
+		color: #7289da;
+		}
+        nav a:hover {
+            color: #7289da;
+        }
+        .content {
+            padding: 20px;
+            text-align: left;
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+        .title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 36px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+		.rule-button {
+			background-color: rgba(51, 51, 51, 0.8);
+			color: white;
+			cursor: pointer;
+			padding: 10px 10px;
+			width: 100%;
+			border: none;
+			text-align: left; /* Align text to the left */
+			outline: none;
+			font-size: 20px;
+			transition: background-color 0.3s ease;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			border-radius: 10px;
+			margin-bottom: 5px;
+		}
+        .rule-button:hover {
+            background-color: rgba(51, 51, 51, 0.6);
+        }
+        .rule-content {
+            padding: 0px;
+            display: none;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-bottom: 7px;
+			margin-top: 0px;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            border-radius: 7px;
+        }
+        .arrow {
+            transition: transform 0.3s ease-out;
+            font-size: 30px;
+        }
+        .arrow.rotate {
+            transform: rotate(180deg);
+        }
+        footer {
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+        }
+        .social-media a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+			text-decoration: none;
+			display: inline;
+        }
+        .social-media a:hover {
+            color: #7289da;
+        }
+		.footer-link a {
+            margin: 0 10px;
+            color: gray;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        .footer-link a:hover {
+            color: #7289da;
+		}
+		.contact {
+			font-style: normal;
+			line-height: 1.6;
+		}
+		.NA{
+			color: #bababa;
+            text-decoration: none;
+			display: inline;
+            font-size: 20px;
+            margin: 0 10px;
+		}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo-container">
+            <img src="https://i.ibb.co/V9JLSVT/header-Copy.webp" alt="Home">
+            <span>Dungeon SMP</span>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="rules.html">Rules</a>
+            <a href="" onclick="faq();">FAQ</a>
+            <a href="" onclick="credits();">Credits</a>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="title">Our rules</div>
+        <span style="color: white; font-size: 25px; font-weight: bold;">Failure to comply with these rules will get you 
+            <span style="color: #FFAA00;">warned</span>, 
+            <span style="color: #b3b3b3;">muted</span> and/or 
+            <span style="color: #AA0000;">banned</span>.</span>
+        
+        <button class="rule-button"><strong>1.  Griefing and killing is allowed as long as it is not done against random players.</strong>
+            <span class="arrow rotate">⌃</span>
+        </button>
+        <div class="rule-content">
+            <p>Griefing and killing people without an understandable reason is punishable, you may not grief or kill players on the <a href="nokillmembers.html"><u>No kill list</u></a>.</p>
+        </div>
+        
+        <button class="rule-button"><strong>2.  No Auto clickers For purposes other than afk grinding.</strong>
+            <span class="arrow rotate">⌃</span>
+        </button>
+        <div class="rule-content">
+            <p>Using autoclickers for purposes such as pvp makes the game unfair for others and that is why it isn't allowed.</p>
+        </div>
+        
+        <button class="rule-button"><strong>3.  Be respectful to staff and don't argue.<br></strong>
+            <span class="arrow rotate">⌃</span>
+        </button>
+        <div class="rule-content">
+            <p>If you are given a punishment by staff, you may only argue it in a ticket on discord and not argue it with staff.</p>
+        </div>
+        
+        <button class="rule-button"><strong>4.  Speak English only.</strong>
+            <span class="arrow rotate">⌃</span>
+        </button>
+        <div class="rule-content">
+            <p>While some moderators may speak a little bit of spanish or arabic or russian, it's not easy to monitor multiple languages at the same time, so please try to speak english only</p>
+        </div>
+        
+        <button class="rule-button"><strong>5.  Stay generally respectful.</strong>
+            <span class="arrow rotate">⌃</span>
+        </button>
+        <div class="rule-content">
+            <p>Stay respectful to everyone and don't use offensive or profane language. This includes using racist slurs and swearing.</p>
+        </div>
+        
+        <button class="rule-button"><strong>6.  No indirect links</strong>
+            <span class="arrow rotate">⌃</span>
+        </button>
+        <div class="rule-content">
+            <p>We highly advise you don't post any links in the in-game chat or discord chat, but if you had to, please use direct links, this includes google search results, shortened links, image links, etc...</p>
+        </div>
+		<button class="rule-button"><strong>7.  No Self-advertising</strong>
+            <span class="arrow rotate">⌃</span>
+        </button>
+        <div class="rule-content">
+            <p>Posting any links to your own discord servers, or a website you own, and any other post or message that may be qualified as self-advertisng is punishable</p>
+		</div>
+		<button class="rule-button"><strong>8.  Use An A Proper gamertag, avoid profane language.</strong>
+            <span class="arrow rotate">⌃</span>
+        </button>
+        <div class="rule-content">
+            <p>Your gamertag must be appropriate, this means your gamertag must follow the rules Xbox have set for setting your gamertag.</p>
+		</div>
+
+		<button class="rule-button"><strong>9.  No Spam</strong>
+			<span class="arrow rotate">⌃</span>
+        </button>
+		<div class="rule-content">
+			<p>Don't send messages too fast or repeatedly send the same message multiple times within a short time spam</p><br>
+		</div>
+		<button class="rule-button"><strong>10.  No exploitation of bugs (lag machines included)</strong>
+			<span class="arrow rotate">⌃</span>
+        </button>
+		<div class="rule-content">
+			<p>You may not use harmful bugs that may in any way lag the server or give you unobtainable items.</p><br>
+		</div>
+		<button class="rule-button"><strong>11.  Rules are subject to common sense</strong>
+			<span class="arrow rotate">⌃</span>
+        </button>
+		<div class="rule-content">
+			<p>While some specific things may not be mentioned here or there is a loophole there, you can still be punished for it all, so don't attempt to outsmart the moderators as you will be punished</p><br>
+		</div>
+		<button class="rule-button"><strong>12.  your username and contact details must be available to moderators</strong>
+			<span class="arrow rotate">⌃</span>
+        </button>
+		<div class="rule-content">
+			<p>by entering your username in the discord gamertag channel, or filling out the <a href="https://docs.google.com/forms/d/1qnN_5WipVjAWvGiHIIJ8HgzkzG37ZZmu50sjGeXTmNU"><u>join form</u></a>, you protect yourself from being kicked or</p>
+		</div>
+	</div>
+
+	<footer>
+		<p>&copy; 2024 Dungeon SMP. All rights reserved. <br>
+			Page made and designed by <a href="https://discord.com/users/803125272495783977"><u>yousif51811</u></a></p>
+
+		<div class="social-media">
+			<p class="NA"><del>YouTube</del></p>
+			<p class="NA"><del>TikTok</del></p>
+			<p class="NA"><del>Instagram</del></p>
+			<a href="https://discord.com/invite/FrZs3uC3Tx" class="social-media" target="_blank">Discord</a>
+			<p class="NA"><del>Twitter</del></p>
+			<a href="#" id="free-diamonds">Free Diamonds</a>
+		</div>
+
+		<div class="footer-link">
+			<a href="" onclick="faq();">No PvP Members</a>
+			<a href="https://docs.google.com/forms/d/15r7TksfX6lvE802VBAAf6mVltmvpZ0e-68N4t3AiOCw">Ban Appeal</a>
+			<h3><strong>Contact</strong></h3>
+			<p>Please contact us via Discord if possible. Otherwise,<br> we can be contacted via the following email address. <br> <br>
+				Email: dungeonsmp73@gmail.com</p>
+		</div>
+	</footer>
+	<script>  
+            function faq() {  
+  
+  
+               alert ("This page is currently only available on discord");  
+            }  
+    </script>
+	<script>  
+            function credits() {  
+  
+  
+               alert ("This page is currently not available, all credits go to yousif51811 for designing this page. all images belong to their rightful owners");  
+            }  
+    </script>
+    <script>
+        document.querySelectorAll('.rule-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
+
+                if (content.style.display === 'block') {
+                    content.style.maxHeight = content.scrollHeight + "px"; // Ensure content's current height is known
+                    requestAnimationFrame(() => {
+                        content.style.maxHeight = '0';
+                        content.style.padding = '0 18px';
+                    });
+                    setTimeout(() => {
+                        content.style.display = 'none';
+                    }, 300);
+                } else {
+                    content.style.display = 'block';
+                    const height = content.scrollHeight; // Get the height after display is set to block
+                    content.style.maxHeight = '0';
+                    content.style.padding = '0 18px';
+                    requestAnimationFrame(() => {
+                        content.style.maxHeight = height + "px";
+                        content.style.padding = '10px 18px';
+                    });
+                }
+
+                arrow.classList.toggle('rotate');
+            });
+        });
+
+        var disclaimer = document.querySelector("img[alt='www.000webhost.com']");
+        if (disclaimer) {
+            disclaimer.remove();
+        }
+    </script>
+</body>
+</html>
